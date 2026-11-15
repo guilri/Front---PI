@@ -27,6 +27,11 @@ function Home() {
     getCategorias()  // ele repetido aqui vai ser para quando adicionar uma nova categoria a pagina ja recarregar sozinha com a categoria nova la sem precisar ficar recarregando manualmente
   }
 
+  async function deleteCategorias(id) {
+    await api.delete(`/categorias/${id}`)  // aqui ao contrario dos outros usa a crase `` pois assim pode passar o parametro que é usado assim : ${parametro}
+    getCategorias()  // ele repetido aqui vai ser para quando adicionar uma nova categoria a pagina ja recarregar sozinha com a categoria nova la sem precisar ficar recarregando manualmente
+  }
+
   useEffect(() => {    // tudo que tiver dentro daq quando iniciar a pagina vai iniciar sozinho
     getCategorias()
   }, [])
@@ -44,23 +49,20 @@ function Home() {
         <button type='button' onClick={createCategorias}>Cadastrar</button>
       </form>
 
-      {categorias.map(categoria => (
-        <div key={categoria.id} className='card'>
+      {categorias.map((categoria) => (
+        <div key={categoria._id} className='card'>
           <div>
-            <p>Codigo: <span>{categoria.codigo}</span></p>
-            <p>Nome: <span>{categoria.nome}</span></p>
+            <p>Codigo:    <span>{categoria.codigo}</span></p>
+            <p>Nome:      <span>{categoria.nome}</span></p>
             <p>Descrição: <span>{categoria.descricao}</span></p>
-            <p>Status: <span>{categoria.status}</span></p>
+            <p>Status:    <span>{categoria.status}</span></p>
           </div>
-          <button>
+          <button onClick={() => deleteCategorias(categoria._id)}>
             <img src={Trash} style={{ width: '45px', height: 'auto' }} />
           </button>
         </div>
       ))}
-
-
     </div>
-
   )
 }
 
