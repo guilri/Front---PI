@@ -11,6 +11,10 @@ function Home() {
   const inputDescricao = useRef()
   const inputStatus = useRef()
 
+  useEffect(() => {    // tudo que tiver dentro daq quando iniciar a pagina vai iniciar sozinho
+    getCategorias()
+  }, [])
+
   async function getCategorias() {
     const categoriasFromApi = await api.get('/categorias')
 
@@ -32,10 +36,21 @@ function Home() {
     getCategorias()  // ele repetido aqui vai ser para quando adicionar uma nova categoria a pagina ja recarregar sozinha com a categoria nova la sem precisar ficar recarregando manualmente
   }
 
-  useEffect(() => {    // tudo que tiver dentro daq quando iniciar a pagina vai iniciar sozinho
-    getCategorias()
-  }, [])
+  async function updateCategorias(categoria) {
+    const codigo = prompt('Novo codigo:', categoria.codigo)
+    const nome = prompt('Novo nome:', categoria.nome)
+    const descricao = prompt ('Nova descrição:', categoria.descricao)
+    const status = prompt ('Novo status:', categoria.status)
 
+    if (codigo === null || nome === null || descricao === null || status === null) return
+    await api.put(`/categorias/${categoria._id}`, {
+      codigo,
+      nome,
+      descricao,
+      status
+    })
+    getCategorias()
+  }
 
 
   return (
@@ -59,6 +74,9 @@ function Home() {
           </div>
           <button onClick={() => deleteCategorias(categoria._id)}>
             <img src={Trash} style={{ width: '45px', height: 'auto' }} />
+          </button>
+          <button type='button' onClick={() => updateCategorias(categoria)}>
+            Editar
           </button>
         </div>
       ))}
