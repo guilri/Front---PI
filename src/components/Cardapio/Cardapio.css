@@ -1,0 +1,14 @@
+.cardapio h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.produtos-grid .fav-card {
+  margin-bottom: 0;
+}

@@ -1,0 +1,33 @@
+.barra-info {
+  max-width: 1100px;
+  margin: 16px auto;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-item span {
+  background: #eaf7ee;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 13px;
+}
+
+.info-item small {
+  color: #666;
+  font-size: 11px;
+}

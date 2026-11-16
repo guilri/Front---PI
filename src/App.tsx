@@ -1,16 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DashBoard from "./pages/DashBoard/DashBoard"
-import Categorias from "./components/Categorias"
-import SubCategorias from "./components/Sub-Categorias"
-import Produtos from "./components/Produtos"
+import Inicio from "./pages/Inicio/Inicio"
 
 function App() {
-    return (
-        <main>
-            <DashBoard/>
-            <Categorias/>
-            <SubCategorias/>
-            <Produtos/>
-        </main>
-    )
+  return (
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/admin" element={<DashBoard />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  )
 }
+
 export default App

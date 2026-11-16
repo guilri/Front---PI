@@ -98,7 +98,7 @@ function SubCategorias() {
           </button>
 
           <button type='button' onClick={() => deleteSubCategorias(subCategoria._id)}>
-            <img src={Trash} style={{ width: '45px', height: 'auto' }} />
+            <img src={Trash} style={{ width: '30px', height: 'auto' }} />
           </button>
         </div>
       ))}

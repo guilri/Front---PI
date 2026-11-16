@@ -1,0 +1,83 @@
+.banner {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.banner-esquerdo {
+  background: #eaf7ee;
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.aberto {
+  color: #169c46;
+  font-weight: 700;
+}
+
+.banner-esquerdo h2 {
+  margin: 8px 0;
+  font-size: 26px;
+}
+
+.banner-esquerdo p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.btn-escolher {
+  background: #169c46;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.banner-esquerdo img {
+  width: 260px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+
+.banner-info {
+  background: #eaf7ee;
+  border: 1px solid #d1ebd9;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner-info h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.banner-info p {
+  font-size: 13px;
+  color: #555;
+}
+
+.onde {
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.onde p {
+  margin: 4px 0;
+}
