@@ -6,10 +6,10 @@ import api from '../../services/api'
 function Home() {
   const [categorias, setCategorias] = useState([])
 
-  const inputCodigo = useRef()
-  const inputNome = useRef()
-  const inputDescricao = useRef()
-  const inputStatus = useRef()
+  const inputCodigo = useRef(null)
+  const inputNome = useRef(null)
+  const inputDescricao = useRef(null)
+  const inputStatus = useRef(null)
 
   useEffect(() => {    // tudo que tiver dentro daq quando iniciar a pagina vai iniciar sozinho
     getCategorias()
