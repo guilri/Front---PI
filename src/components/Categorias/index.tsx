@@ -3,7 +3,7 @@ import './style.css'
 import Trash from '../../assets/trash.svg'
 import api from '../../services/api'
 
-function Home() {
+function Categorias() {
   const [categorias, setCategorias] = useState([])
 
   const inputCodigo = useRef(null)
@@ -84,4 +84,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Categorias

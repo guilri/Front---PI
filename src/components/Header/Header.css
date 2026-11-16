@@ -1,0 +1,28 @@
+.header-container{
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    background-color: red;
+    width: 1920px;
+    height: 72px;
+    margin: auto;
+}
+
+.btn-carrinho {
+    background-color: #FFFFFF;
+    width: 149px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    color: #252724;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.marca-img {
+    width: 263;
+    height: 44;
+}
+
